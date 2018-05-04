@@ -2106,10 +2106,8 @@ static struct dentry *cgroup_mount(struct file_system_type *fs_type,
 			goto out_unlock;
 		}
 
-		/*
 		if (root->flags ^ opts.flags)
 			pr_warn("new mount options do not match the existing superblock, will be ignored\n");
-		 */
 
 		/*
 		 * We want to reuse @root whose lifetime is governed by its

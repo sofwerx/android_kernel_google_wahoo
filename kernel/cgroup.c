@@ -1658,10 +1658,6 @@ static int parse_cgroupfs_options(char *data, struct cgroup_sb_opts *opts)
 			opts->flags |= CGRP_ROOT_SANE_BEHAVIOR;
 			continue;
 		}
-		if (!strcmp(token, "prefix")) {
-			opts->flags &= ~CGRP_ROOT_NOPREFIX;
-			continue;
-		}
 		if (!strcmp(token, "noprefix")) {
 			opts->flags |= CGRP_ROOT_NOPREFIX;
 			continue;

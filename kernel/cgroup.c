@@ -1809,10 +1809,8 @@ static int cgroup_remount(struct kernfs_root *kf_root, int *flags, char *data)
 	/* remounting is not allowed for populated hierarchies */
 	if (!list_empty(&root->cgrp.self.children)) {
 		pr_err("remounting is not allowed for populated heirarchies\n");
-/*
 		ret = -EBUSY;
 		goto out_unlock;
-*/
 	}
 
 	ret = rebind_subsystems(root, added_mask);

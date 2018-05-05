@@ -1800,15 +1800,12 @@ static int cgroup_remount(struct kernfs_root *kf_root, int *flags, char *data)
 	    (opts.name && strcmp(opts.name, root->name))) {
 		pr_err("option or name mismatch, new: 0x%x \"%s\", old: 0x%x \"%s\"\n",
 		       opts.flags, opts.name ?: "", root->flags, root->name);
-/*
 		ret = -EINVAL;
 		goto out_unlock;
-*/
 	}
 
 	/* remounting is not allowed for populated hierarchies */
 	if (!list_empty(&root->cgrp.self.children)) {
-		pr_err("remounting is not allowed for populated heirarchies\n");
 		ret = -EBUSY;
 		goto out_unlock;
 	}
